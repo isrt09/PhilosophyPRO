@@ -37,3 +37,16 @@ function philosophy_assets(){
 add_action( "wp_enqueue_scripts", "philosophy_assets" );
 
 remove_action("term_description","wpautop");
+
+function philosophy_sidebar_register() {
+    register_sidebar( array(
+        'name'          => __( 'About Sidebar', 'philosophy' ),
+        'id'            => 'about-us',
+        'description'   => __( 'Widgets in this area will be shown on about page.', 'philosophy' ),
+        'before_widget' => '<div id="%1$s" class="col-block %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h3 class="quarter-top-margin">',
+        'after_title'   => '</h3>',
+    ) );
+}
+add_action( 'widgets_init', 'philosophy_sidebar_register' );
