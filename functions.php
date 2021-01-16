@@ -35,3 +35,5 @@ function philosophy_assets(){
 	wp_enqueue_script( "main-js", get_theme_file_uri( "/assets/js/main.js" ), array( "jquery" ), "1.0", true );
 }
 add_action( "wp_enqueue_scripts", "philosophy_assets" );
+
+remove_action("term_description","wpautop");
