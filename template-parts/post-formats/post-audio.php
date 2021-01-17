@@ -1,7 +1,7 @@
 <?php 
 	$philosophy_audio_file = "";
 	if(function_exists("the_field")){
-		$philosophy_audio_file = get_the_field("source_file");
+		$philosophy_audio_file = get_field("source_file");
 	}
  ?>
 <article <?php post_class("masonry__brick entry format-audio") ?> data-aos="fade-up">

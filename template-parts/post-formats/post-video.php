@@ -1,7 +1,7 @@
 <?php 
 	$philosophy_video_file = "";
 	if(function_exists("the_field")){
-		$philosophy_video_file = get_the_field("source_file");
+		$philosophy_video_file = get_field("source_file");
 	}
  ?>
 <article <?php post_class('masonry__brick entry format-video'); ?> data-aos="fade-up">
