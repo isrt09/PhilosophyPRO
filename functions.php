@@ -73,7 +73,7 @@ function philosophy_sidebar_register() {
         'after_widget'  => '</div>',
         'before_title'  => '<span>',
         'after_title'   => '</span>',
-    ) );
+    ) );    
 
      register_sidebar( array(
         'name'          => __( 'Copyright', 'philosophy' ),
@@ -83,6 +83,25 @@ function philosophy_sidebar_register() {
         'after_widget'  => '</div>',
         'before_title'  => '',
         'after_title'   => '',
+    ) );
+     register_sidebar( array(
+        'name'          => __( 'Google Map', 'philosophy' ),
+        'id'            => 'contact-map',
+        'description'   => __( 'Widgets in this area will be shown on Google Map section.', 'philosophy' ),
+        'before_widget' => '<div id="map-wrap %1$s" class="text-center %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '',
+        'after_title'   => '',
+    ) );
+
+     register_sidebar( array(
+        'name'          => __( 'Contact Info', 'philosophy' ),
+        'id'            => 'contact-section',
+        'description'   => __( 'Widgets in this area will be shown on contact-section.', 'philosophy' ),
+        'before_widget' => '<div id="%1$s" class="col-six tab-full %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h3>',
+        'after_title'   => '</h3>',
     ) );
 }
 add_action( 'widgets_init', 'philosophy_sidebar_register' );

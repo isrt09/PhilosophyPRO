@@ -63,7 +63,13 @@ function philosophy_register_required_plugins() {
 			'name'      => 'Advanced Custom Field',
 			'slug'      => 'advanced-custom-fields',
 			'required'  => false,
+		),
+		array(
+			'name'      => 'WP Google Maps',
+			'slug'      => 'wp-google-maps',
+			'required'  => false,
 		),		
+
 	);
 
 	/*
