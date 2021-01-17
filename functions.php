@@ -17,6 +17,11 @@ function philosophy_theme_setup() {
 	add_theme_support( "post-formats", array( "image", "gallery", "quote", "audio", "video", "link" ) );
 	add_editor_style( "/assets/css/editor-style.css" );
 	register_nav_menu('topmenu',__("Top Menu","philosophy")); 	
+	register_nav_menus(array(
+		'footer_left' =>__("Footer Left Menu","philosophy"),
+		'footer_mid'  =>__("Footer Middle Menu","philosophy"),		
+	   'footer_right' =>__("Footer right Menu","philosophy"),   
+	)); 	 
 }
 
 add_action( "after_setup_theme", "philosophy_theme_setup" );
@@ -58,6 +63,26 @@ function philosophy_sidebar_register() {
         'after_widget'  => '</div>',
         'before_title'  => '<h3>',
         'after_title'   => '</h3>',
+    ) );
+
+    register_sidebar( array(
+        'name'          => __( 'Quick Newsletter', 'philosophy' ),
+        'id'            => 'before-footer-newsletter-section',
+        'description'   => __( 'Widgets in this area will be shown on before-footer-Newsletter-section.', 'philosophy' ),
+        'before_widget' => '<div id="%1$s" class="%2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<span>',
+        'after_title'   => '</span>',
+    ) );
+
+     register_sidebar( array(
+        'name'          => __( 'Copyright', 'philosophy' ),
+        'id'            => 'copyright-section',
+        'description'   => __( 'Widgets in this area will be shown on footer-bottom-copyright-section.', 'philosophy' ),
+        'before_widget' => '<div id="%1$s" class="s-footer__copyright text-center %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '',
+        'after_title'   => '',
     ) );
 }
 add_action( 'widgets_init', 'philosophy_sidebar_register' );
